@@ -1,7 +1,6 @@
 ---
-title: Create SSH key
+title: 生成ssh-key
 ---
-## 生成ssh-key
 打开终端在终端输入以下代码:
 
 `$ ls ~/.ssh`

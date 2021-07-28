@@ -1,7 +1,6 @@
 ---
-title: Screen Adaptation
+title: 前端大屏适配问题(用react示例)
 ---
-## 前端大屏适配问题(用react示例)
 采用了css3的缩放transform: scale(X)属性
 
 ```react

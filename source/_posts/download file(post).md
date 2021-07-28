@@ -1,8 +1,6 @@
 ---
-title: Download File(post)
+title: post请求下下载文件的方法
 ---
-## post请求下下载文件的方法
-
 如果后端是用post请求并且返回文件流可以采用以下代码
 
 ```js

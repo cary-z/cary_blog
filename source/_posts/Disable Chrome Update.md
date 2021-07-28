@@ -1,8 +1,6 @@
 ---
-title: Disable Chrome Update
+title: mac禁用chrome更新
 ---
-## mac禁用chrome更新
-
 ### 禁止更新
 
 在终端输入:
