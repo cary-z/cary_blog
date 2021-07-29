@@ -4,9 +4,12 @@ catalog: true
 comments: true
 header-img: snail-bg.jpg
 tags:
-- react
+  - react
+categories:
+  - transform
 ---
-采用了css3的缩放transform: scale(X)属性
+
+采用了 css3 的缩放 transform: scale(X)属性
 
 ```react
 import React, { Component } from 'react';
