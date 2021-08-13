@@ -163,6 +163,7 @@ path: baidusitemap.xml
 deploy:
   type: git
   repo: git@github.com:cary-z/cary-z.github.io.git
+  name: cary-z
   branch: master
 
 ## share
