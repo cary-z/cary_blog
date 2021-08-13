@@ -13,15 +13,15 @@ categories:
 
 ```
 ├── EChart
-		├── chart-bar
-				├──ChartBar.vue
-				├──index.vue
-		├── chart-line
-				├──ChartLine.vue
-				├──index.vue
-		├── chart-pie
-				├──ChartPie.vue
-				├──index.vue
+	├── chart-bar
+		├──ChartBar.vue
+		├──index.vue
+	├── chart-line
+		├──ChartLine.vue
+		├──index.vue
+	├── chart-pie
+		├──ChartPie.vue
+		├──index.vue
 ```
 
 ## ChartBar.vue源码
