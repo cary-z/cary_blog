@@ -14,9 +14,9 @@ var searchFunc = function(path, search_id, content_id) {
                 };
             }).get();
 
-            var $input = document.getElementById(search_id);
+            var $input = $('#'+search_id)[0];
 			if (!$input) return;
-            var $resultContent = document.getElementById(content_id);
+            var $resultContent = $('#'+content_id)[0];
             if ($("#local-search-input").length > 0) {
                 $input.addEventListener('input', function () {
                     var str = '<ul class=\"search-result-list\">';
@@ -26,6 +26,7 @@ var searchFunc = function(path, search_id, content_id) {
                         return;
                     }
                     // perform local searching
+                    var flag = false;
                     datas.forEach(function (data) {
                         var isMatch = true;
                         var content_index = [];
@@ -91,10 +92,11 @@ var searchFunc = function(path, search_id, content_id) {
                                 str += "<p class=\"search-result\">" + match_content + "...</p>"
                             }
                             str += "</li>";
+                            flag = true;
                         }
                     });
                     str += "</ul>";
-                    $resultContent.innerHTML = str;
+                    flag && ($resultContent.innerHTML = str);
                 });
             }
         }

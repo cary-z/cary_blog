@@ -53,6 +53,9 @@
 }
 
 /* search */
+.site_search {
+  position: relative;
+}
 #local-search-input{
 	box-shadow:0px 0px 0px 0px rgb(191,191,191) inset;
 	border:1px solid rgb(191,191,191);
@@ -86,12 +89,16 @@
 
 }
 #local-search-result{ /* div */
-	background:rgba(199,200,206,0.2);
+	width: 100%;
+	position: absolute;
+	/* background:rgba(199,200,206,0.2); */
+	background:rgba(67,70,79);
 	margin:0px;
 	padding:0px;
 	overflow-y:scroll;
 	height:auto;
 	max-height:655px;
+	z-index: 999;
 }
 #local-search-result::-webkit-scrollbar{
 	display:none;
