@@ -32,14 +32,14 @@ function flatten(arr) {
 }
 ```
 
-## for循环判断数组递归
+## for of循环判断数组递归
 
 ```js
 function flatten(arr) {
-  let result = []
-  for (let i = 0; i < arr.length; i++) {
-    if (Array.isArray(arr[i])) result.push(...flatten(arr[i]))
-    else result.push(arr[i])
+  const result = []
+  for (const item of arr) {
+      if (Array.isArray(item)) result.push(...flatten(item))
+      else result.push(item)
   }
   return result
 }
