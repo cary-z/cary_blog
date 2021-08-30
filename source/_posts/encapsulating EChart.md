@@ -2,6 +2,7 @@
 title: 二次封装EChart
 catalog: true
 comments: true
+date: 2021-8-13 15:06:46
 header-img: snail-bg.jpg
 tags:
   - vue

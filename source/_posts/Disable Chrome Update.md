@@ -2,6 +2,7 @@
 title: mac禁用chrome更新
 catalog: true
 comments: true
+date: 2021-07-28 17:22:59
 header-img: snail-bg.jpg
 tags:
   - bash

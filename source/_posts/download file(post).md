@@ -2,6 +2,7 @@
 title: post请求下下载文件的方法
 catalog: true
 comments: true
+date: 2021-07-28 17:22:59
 header-img: snail-bg.jpg
 tags:
   - vue
