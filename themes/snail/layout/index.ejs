@@ -16,7 +16,8 @@ layout: page
                     <%- post.subtitle || "" %>
                 </h3>
                 <div class="post-content-preview">
-                    <%- truncate(strip_html(post.content), {length: 200, omission: '...'}) %>...
+                    <% var content = strip_html(post.content) %>
+                    <%- truncate(content, {length: 200, omission: '...'}) %>
                 </div>
             </a>
             <% if (config.home_posts_tag){%>
@@ -57,7 +58,21 @@ layout: page
                     <%- post.subtitle || "" %>
                 </h3>
                 <div class="post-content-preview">
-                    <%- truncate(strip_html(post.content), {length: 200, omission: '...'}) %>...
+                    <% var content = strip_html(post.content) %>
+                    <% var replacer = function (match,item) {
+                        if (item.length < 5) return item
+                        var n = 0,strArr = [];
+                        for (var s of item) {
+                            if (strArr.length === 0) {
+                                n++;
+                                strArr = [...n.toString()];
+                            }
+                            if (s !== strArr.shift()) return item
+                        }
+                        if (strArr.length === 0) return ''
+                    }%>
+                    <% content = content.replace(/(\d+)/g,replacer) %>
+                    <%- truncate(content, {length: 200, omission: '...'}) %>
                 </div>
             </a>
             <% if (config.home_posts_tag){%>
