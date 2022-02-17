@@ -1,5 +1,5 @@
 ---
-title: 手写new和call
+title: 手写各种方法
 catalog: true
 comments: true
 date: 2022-2-16 17:37:57
@@ -29,6 +29,18 @@ function _call (obj,...arg) {
     obj[temFn] = this
     obj[temFn](...arg)
     delete obj[temFn]
+}
+```
+
+## 手写instanceof(简陋版)
+
+```js
+function _instanceof (children,father) {
+    while (children) {
+        if (children.__proto__ === father.prototype) return true
+        children = children.__proto__
+    }
+    return false
 }
 ```
 
