@@ -14,9 +14,12 @@ categories:
 ## 手写new(简陋版)
 
 ```js
-function _new (fn,...arg) {
-    let obj = Object.create(fn.prototype)
-    fn.apply(obj,arg)
+function _new (constructor,...arg) {
+    let obj = Object.create(constructor.prototype)
+    const result = constructor.apply(obj,arg)
+  	if (result && typeof (result === 'function' || typeof result === 'object')) {
+        return result
+    }
     return obj
 }
 ```
@@ -24,21 +27,24 @@ function _new (fn,...arg) {
 ## 手写call(简陋版)
 
 ```js
-function _call (obj,...arg) {
-    const temFn = Symbol('temFn')
-    obj[temFn] = this
-    obj[temFn](...arg)
-    delete obj[temFn]
+function _call () {
+    const [_thisArg,...arg] = [...arguments]
+    const thisArg = Object(_thisArg) || window
+    const temFn = Symbol()
+    thisArg[temFn] = this
+    thisArg[temFn](...arg)
+    delete thisArg[temFn]
 }
 ```
 
 ## 手写instanceof(简陋版)
 
 ```js
-function _instanceof (children,father) {
-    while (children) {
-        if (children.__proto__ === father.prototype) return true
-        children = children.__proto__
+function _instanceof (object,constructor) {
+  	if (typeof object !== 'object' || object === null) return false
+    while (object) {
+        if (object.__proto__ === constructor.prototype) return true
+        object = object.__proto__
     }
     return false
 }
