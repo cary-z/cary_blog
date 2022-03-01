@@ -17,7 +17,7 @@ categories:
 function _new (constructor,...arg) {
     let obj = Object.create(constructor.prototype)
     const result = constructor.apply(obj,arg)
-  	if (result && typeof (result === 'function' || typeof result === 'object')) {
+  	if (result && (typeof result === 'function' || typeof result === 'object')) {
         return result
     }
     return obj
