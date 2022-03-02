@@ -22,6 +22,19 @@ console.timeEnd('数组扁平化')
 console.log(lastArr)
 ```
 
+## 循环 使用数组splice方法（非递归，改变原数组，不返回新数组）
+
+```js
+function flatten(arr) {
+   for (let i = 0;i < arr.length;) {
+    if (Array.isArray(arr[i])) {
+      arr.splice(i,1,...arr[i])
+    } else i++
+  }
+  return arr
+}
+```
+
 ## 用数组的reduce方法递归
 
 ```js
